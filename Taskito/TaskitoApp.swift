@@ -11,7 +11,10 @@ import SwiftUI
 struct TaskitoApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                Color.blue.ignoresSafeArea()
+                HomeScreen()
+            }
         }
     }
 }
