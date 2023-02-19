@@ -18,6 +18,15 @@ class TaskList: Identifiable, ObservableObject {
     func addTask(task: Task) {
         tasks.append(task)
     }
+    
+    func deleteTask(task: Task) {
+        let index = tasks.firstIndex(where: {
+            $0.id == task.id
+        })
+        if let removeAt = index {
+            tasks.remove(at: removeAt)
+        }
+    }
 }
 
 struct TaskListView: View {
@@ -26,6 +35,18 @@ struct TaskListView: View {
         List {
             ForEach(taskList.tasks) { item in
                 TaskView(taskObj: item)
+                    .contextMenu(ContextMenu(menuItems: {
+                        Button(action: {
+                            item.markAsComplete()
+                        }, label: {
+                            Label("Mark as complete", systemImage: "checkmark")
+                        })
+                        Button(action: {
+                            taskList.deleteTask(task: item)
+                        }, label: {
+                            Label("Delete", systemImage: "trash.fill")
+                        })
+                    }))
             }
         }
     }
