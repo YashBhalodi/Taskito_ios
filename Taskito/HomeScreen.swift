@@ -8,37 +8,22 @@
 import SwiftUI
 
 struct HomeScreen: View {
-    var tasks: [Task] = [
-        Task("first", false),
-        Task("second", false),
-        Task("third", true),
-        Task("first", false),
-        Task("second", false),
-        Task("third", true),
-        Task("first", false),
-        Task("second", false),
-        Task("third", true),
-        Task("first", false),
-        Task("second", false),
-        Task("third", true)
-    ]
+    @StateObject var taskList: TaskList = TaskList()
     
     var body: some View {
         NavigationView {
-            ZStack {
-                List {
-                    ForEach(tasks) { item in
-                        TaskView(taskObj: item)
-                    }
-                }
+            TaskListView(taskList: taskList)
                 .listStyle(PlainListStyle())
                 .navigationTitle("My work")
-                .navigationBarItems(trailing: NavigationLink(
-                                        destination: AddTaskView(),
-                                        label: {
-                                            Image(systemName: "plus.circle.fill").foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                                        }))
-            }
+                .navigationBarItems(
+                    trailing: NavigationLink(
+                        destination: AddTaskView(taskList: taskList),
+                        label: {
+                            Image(systemName: "plus.circle.fill")
+                                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                        }
+                    )
+                )
         }
     }
 }

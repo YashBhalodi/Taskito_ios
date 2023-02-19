@@ -11,6 +11,7 @@
 		DB4C50DA29A0FA4E0043661A /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50D929A0FA4E0043661A /* TaskView.swift */; };
 		DB4C50DC29A10B5C0043661A /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50DB29A10B5C0043661A /* AddTaskView.swift */; };
 		DB4C50DE29A11E2D0043661A /* CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */; };
+		DB8403F529A1DDF200301CCC /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8403F429A1DDF200301CCC /* TaskListView.swift */; };
 		DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB937C39298E7F1000796B35 /* TaskitoApp.swift */; };
 		DB937C3E298E7F1100796B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937C3D298E7F1100796B35 /* Assets.xcassets */; };
 		DB937C41298E7F1100796B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937C40298E7F1100796B35 /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		DB4C50D929A0FA4E0043661A /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		DB4C50DB29A10B5C0043661A /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExtensions.swift; sourceTree = "<group>"; };
+		DB8403F429A1DDF200301CCC /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		DB937C36298E7F1000796B35 /* Taskito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB937C39298E7F1000796B35 /* TaskitoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskitoApp.swift; sourceTree = "<group>"; };
 		DB937C3D298E7F1100796B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				DB4C50DB29A10B5C0043661A /* AddTaskView.swift */,
 				DB937C39298E7F1000796B35 /* TaskitoApp.swift */,
 				DB4C50D729A0F9430043661A /* HomeScreen.swift */,
+				DB8403F429A1DDF200301CCC /* TaskListView.swift */,
 				DB4C50D929A0FA4E0043661A /* TaskView.swift */,
 				DB937C3D298E7F1100796B35 /* Assets.xcassets */,
 				DB937C42298E7F1200796B35 /* Info.plist */,
@@ -152,6 +155,7 @@
 				DB4C50DE29A11E2D0043661A /* CustomExtensions.swift in Sources */,
 				DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */,
 				DB4C50DC29A10B5C0043661A /* AddTaskView.swift in Sources */,
+				DB8403F529A1DDF200301CCC /* TaskListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

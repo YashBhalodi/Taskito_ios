@@ -28,15 +28,29 @@ class Task : Identifiable, ObservableObject {
 
 struct TaskView: View {
     @StateObject var taskObj : Task
-    
+    var checkMarkTransition : AnyTransition = AnyTransition.asymmetric(
+        insertion: .move(edge: .bottom),
+        removal: .opacity.animation(.easeInOut(duration: 0.05))
+    )
     var body: some View {
-        
         Button(action: {
             withAnimation {
                 taskObj.toggleStatus()
             }
         }, label: {
             HStack {
+                if(taskObj.isCompleted) {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.green)
+                        .animation(.easeInOut(duration: 0.1))
+                        .transition(checkMarkTransition)
+                } else {
+                    Image(systemName: "circle")
+                        .foregroundColor(.black)
+                        .animation(.easeInOut(duration: 0.1))
+                        .transition(checkMarkTransition)
+                }
+                
                 Text(taskObj.title)
                     .font(.title3)
                     .fontWeight(.semibold)
@@ -44,13 +58,6 @@ struct TaskView: View {
                     .animation(.easeInOut(duration: 0.1))
                 
                 Spacer()
-                
-                if(taskObj.isCompleted) {
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(.green)
-                        .animation(.easeInOut(duration: 0.1))
-                        .transition(.slide)
-                }
             }
             .padding(.vertical)
         })
@@ -60,6 +67,7 @@ struct TaskView: View {
 
 struct TaskView_Preview: PreviewProvider {
     static var previews: some View {
-        TaskView(taskObj: Task("hey",true)).frame(width: 400, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        TaskView(taskObj: Task("hey",true))
+            .frame(width: 400, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
     }
 }
