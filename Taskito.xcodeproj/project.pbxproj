@@ -8,25 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		DB4C50D829A0F9430043661A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50D729A0F9430043661A /* HomeScreen.swift */; };
-		DB4C50DA29A0FA4E0043661A /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50D929A0FA4E0043661A /* TaskView.swift */; };
-		DB4C50DC29A10B5C0043661A /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50DB29A10B5C0043661A /* AddTaskView.swift */; };
 		DB4C50DE29A11E2D0043661A /* CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */; };
-		DB8403F529A1DDF200301CCC /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8403F429A1DDF200301CCC /* TaskListView.swift */; };
+		DB808EA729A271BE00A7E299 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EA629A271BE00A7E299 /* TaskModel.swift */; };
+		DB808EAA29A2759E00A7E299 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EA929A2759E00A7E299 /* TaskView.swift */; };
+		DB808EAC29A2776000A7E299 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EAB29A2776000A7E299 /* TaskListModel.swift */; };
+		DB808EB129A27CD300A7E299 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EB029A27CD300A7E299 /* TaskListView.swift */; };
+		DB808EB329A27D2F00A7E299 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EB229A27D2F00A7E299 /* TaskListViewModel.swift */; };
 		DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB937C39298E7F1000796B35 /* TaskitoApp.swift */; };
 		DB937C3E298E7F1100796B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937C3D298E7F1100796B35 /* Assets.xcassets */; };
-		DB937C41298E7F1100796B35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937C40298E7F1100796B35 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB4C50D729A0F9430043661A /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		DB4C50D929A0FA4E0043661A /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
-		DB4C50DB29A10B5C0043661A /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExtensions.swift; sourceTree = "<group>"; };
-		DB8403F429A1DDF200301CCC /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		DB808EA629A271BE00A7E299 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		DB808EA929A2759E00A7E299 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		DB808EAB29A2776000A7E299 /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
+		DB808EB029A27CD300A7E299 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		DB808EB229A27D2F00A7E299 /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		DB937C36298E7F1000796B35 /* Taskito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB937C39298E7F1000796B35 /* TaskitoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskitoApp.swift; sourceTree = "<group>"; };
 		DB937C3D298E7F1100796B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DB937C40298E7F1100796B35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB937C42298E7F1200796B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,11 +43,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB937C2D298E7F1000796B35 = {
+		DB808EA329A2719E00A7E299 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DB808EA629A271BE00A7E299 /* TaskModel.swift */,
+				DB808EAB29A2776000A7E299 /* TaskListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DB808EA429A271A600A7E299 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB4C50D729A0F9430043661A /* HomeScreen.swift */,
+				DB808EA929A2759E00A7E299 /* TaskView.swift */,
+				DB808EB029A27CD300A7E299 /* TaskListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DB808EA529A271AD00A7E299 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DB808EB229A27D2F00A7E299 /* TaskListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DB808EA829A274F600A7E299 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */,
-				DB937C38298E7F1000796B35 /* Taskito */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DB937C2D298E7F1000796B35 = {
+			isa = PBXGroup;
+			children = (
+				DB808EA329A2719E00A7E299 /* Model */,
+				DB808EA529A271AD00A7E299 /* ViewModel */,
+				DB808EA429A271A600A7E299 /* View */,
+				DB808EA829A274F600A7E299 /* Extensions */,
+				DB937C39298E7F1000796B35 /* TaskitoApp.swift */,
+				DB937C3D298E7F1100796B35 /* Assets.xcassets */,
+				DB937C42298E7F1200796B35 /* Info.plist */,
 				DB937C37298E7F1000796B35 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,29 +98,6 @@
 				DB937C36298E7F1000796B35 /* Taskito.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		DB937C38298E7F1000796B35 /* Taskito */ = {
-			isa = PBXGroup;
-			children = (
-				DB4C50DB29A10B5C0043661A /* AddTaskView.swift */,
-				DB937C39298E7F1000796B35 /* TaskitoApp.swift */,
-				DB4C50D729A0F9430043661A /* HomeScreen.swift */,
-				DB8403F429A1DDF200301CCC /* TaskListView.swift */,
-				DB4C50D929A0FA4E0043661A /* TaskView.swift */,
-				DB937C3D298E7F1100796B35 /* Assets.xcassets */,
-				DB937C42298E7F1200796B35 /* Info.plist */,
-				DB937C3F298E7F1100796B35 /* Preview Content */,
-			);
-			path = Taskito;
-			sourceTree = "<group>";
-		};
-		DB937C3F298E7F1100796B35 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				DB937C40298E7F1100796B35 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +157,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB937C41298E7F1100796B35 /* Preview Assets.xcassets in Resources */,
 				DB937C3E298E7F1100796B35 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,12 +168,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB4C50DA29A0FA4E0043661A /* TaskView.swift in Sources */,
+				DB808EB129A27CD300A7E299 /* TaskListView.swift in Sources */,
+				DB808EAC29A2776000A7E299 /* TaskListModel.swift in Sources */,
 				DB4C50D829A0F9430043661A /* HomeScreen.swift in Sources */,
 				DB4C50DE29A11E2D0043661A /* CustomExtensions.swift in Sources */,
 				DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */,
-				DB4C50DC29A10B5C0043661A /* AddTaskView.swift in Sources */,
-				DB8403F529A1DDF200301CCC /* TaskListView.swift in Sources */,
+				DB808EB329A27D2F00A7E299 /* TaskListViewModel.swift in Sources */,
+				DB808EAA29A2759E00A7E299 /* TaskView.swift in Sources */,
+				DB808EA729A271BE00A7E299 /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +304,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Taskito/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Y2C2TXFT49;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Taskito/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,10 +326,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Taskito/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = Y2C2TXFT49;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Taskito/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
