@@ -7,8 +7,10 @@
 
 import Foundation
 
-enum TaskStatus {
-    case todo, inProgress, completed
+enum TaskStatus: String {
+    case todo = "To do"
+    case inProgress = "In Progress"
+    case completed = "Completed"
 }
 
 struct TaskModel: Identifiable {

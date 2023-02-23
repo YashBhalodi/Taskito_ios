@@ -12,17 +12,24 @@ struct TaskListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(vm.taskList.tasks, content: {
-                    TaskView(task: $0)
-                })
+                ForEach(vm.taskList.tasks) { task in
+                    TaskView(task: task)
+                        .contextMenu(ContextMenu(menuItems: {
+                            Button(action: {
+                                vm.taskList.transitionTaskToNextStatus(task: task)
+                            }, label: {
+                                Text("Next status")
+                            })
+                        }))
+                }
             }
             .listStyle(PlainListStyle())
             .navigationTitle(vm.taskList.title)
-            .navigationBarItems(trailing: Button(action: {
-                vm.taskList.addTask(TaskModel(title: "New", status: TaskStatus.todo))
-            }, label: {
-                Text("Add")
-            }))
+            .navigationBarItems(trailing: NavigationLink(
+                                    destination: AddTaskView(listVM: vm),
+                                    label: {
+                                        Text("Add")
+                                    }))
         }
         
     }

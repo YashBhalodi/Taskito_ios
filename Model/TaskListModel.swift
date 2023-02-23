@@ -7,6 +7,11 @@
 
 import Foundation
 
+var nextStatusDict: [TaskStatus:TaskStatus] = [
+    TaskStatus.todo:TaskStatus.inProgress,
+    TaskStatus.inProgress:TaskStatus.completed,
+]
+
 struct TaskListModel: Identifiable {
     let id: String
     var title: String
@@ -36,6 +41,17 @@ struct TaskListModel: Identifiable {
         let index = self.tasks.firstIndex(where: {$0.id == task.id})
         if let foundIndex = index {
             self.tasks[foundIndex] = tasks[foundIndex].updateStatus(status: status)
+        }
+    }
+    
+    mutating func transitionTaskToNextStatus(task: TaskModel) {
+        let index = self.tasks.firstIndex(where: {$0.id == task.id})
+        if let foundIndex = index {
+            var currentTask = tasks[foundIndex]
+            let nextStatus = nextStatusDict[tasks[foundIndex].status]
+            if let updatedStatus = nextStatus {
+                self.tasks[foundIndex] = currentTask.updateStatus(status: updatedStatus)
+            }
         }
     }
 }

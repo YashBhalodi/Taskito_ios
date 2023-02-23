@@ -16,6 +16,7 @@
 		DB808EB329A27D2F00A7E299 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EB229A27D2F00A7E299 /* TaskListViewModel.swift */; };
 		DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB937C39298E7F1000796B35 /* TaskitoApp.swift */; };
 		DB937C3E298E7F1100796B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937C3D298E7F1100796B35 /* Assets.xcassets */; };
+		DB96EC6D29A5CD09004442C6 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96EC6C29A5CD09004442C6 /* AddTaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DB937C39298E7F1000796B35 /* TaskitoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskitoApp.swift; sourceTree = "<group>"; };
 		DB937C3D298E7F1100796B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB937C42298E7F1200796B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB96EC6C29A5CD09004442C6 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				DB4C50D729A0F9430043661A /* HomeScreen.swift */,
 				DB808EA929A2759E00A7E299 /* TaskView.swift */,
 				DB808EB029A27CD300A7E299 /* TaskListView.swift */,
+				DB96EC6C29A5CD09004442C6 /* AddTaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			files = (
 				DB808EB129A27CD300A7E299 /* TaskListView.swift in Sources */,
 				DB808EAC29A2776000A7E299 /* TaskListModel.swift in Sources */,
+				DB96EC6D29A5CD09004442C6 /* AddTaskView.swift in Sources */,
 				DB4C50D829A0F9430043661A /* HomeScreen.swift in Sources */,
 				DB4C50DE29A11E2D0043661A /* CustomExtensions.swift in Sources */,
 				DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */,
