@@ -20,6 +20,11 @@ struct TaskListView: View {
                             }, label: {
                                 Text("Next status")
                             })
+                            Button(action: {
+                            vm.taskList.removeTask(task)
+                            }, label: {
+                                Text("Delete")
+                            })
                         }))
                 }
             }
