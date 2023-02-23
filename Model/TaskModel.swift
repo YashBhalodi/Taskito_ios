@@ -7,16 +7,17 @@
 
 import Foundation
 
-enum TaskStatus: String {
+enum TaskStatus: String, Codable {
     case todo = "To do"
     case inProgress = "In Progress"
     case completed = "Completed"
 }
 
-struct TaskModel: Identifiable {
+struct TaskModel: Identifiable, Codable {
     var id: String
     var title: String
     var status: TaskStatus = TaskStatus.todo
+    
     
     init(id: String = UUID().uuidString, title: String, status: TaskStatus) {
         self.id = id

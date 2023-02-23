@@ -15,15 +15,28 @@ var nextStatusDict: [TaskStatus:TaskStatus] = [
 struct TaskListModel: Identifiable {
     let id: String
     var title: String
-    var tasks: [TaskModel]
+    var tasks: [TaskModel] = [] {
+        didSet {
+            saveTasks()
+        }
+    }
     
     init(id: String = UUID().uuidString, title: String, tasks: [TaskModel] = []) {
         self.id = id
         self.title = title
-        self.tasks = [
-            TaskModel(title: "Hey", status: TaskStatus.todo),
-            TaskModel(title: "Heyasa s", status: TaskStatus.todo)
-        ]
+        self.tasks = loadTasks(title)
+    }
+    
+    mutating func loadTasks (_ title: String) -> [TaskModel] {
+        guard let data = UserDefaults.standard.data(forKey: title) else { return []}
+        guard let savedTasks = try? JSONDecoder().decode([TaskModel].self, from: data) else { return []}
+        return savedTasks
+    }
+    
+    func saveTasks () {
+        if let encodedData = try? JSONEncoder().encode(tasks) {
+            UserDefaults.standard.set(encodedData, forKey: self.title)
+        }
     }
     
     mutating func addTask(_ task: TaskModel) {
