@@ -28,8 +28,8 @@ struct TaskListModel: Identifiable {
     }
     
     mutating func loadTasks (_ title: String) -> [TaskModel] {
-        guard let data = UserDefaults.standard.data(forKey: title) else { return []}
-        guard let savedTasks = try? JSONDecoder().decode([TaskModel].self, from: data) else { return []}
+        guard let data = UserDefaults.standard.data(forKey: title) else { return [] }
+        guard let savedTasks = try? JSONDecoder().decode([TaskModel].self, from: data) else { return [] }
         return savedTasks
     }
     
