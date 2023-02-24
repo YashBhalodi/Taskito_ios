@@ -50,6 +50,10 @@ struct TaskListModel: Identifiable {
         }
     }
     
+    mutating func removeTask(indexSet: IndexSet) {
+        self.tasks.remove(atOffsets: indexSet)
+    }
+    
     mutating func updateTaskStatus(task: TaskModel, status: TaskStatus) {
         let index = self.tasks.firstIndex(where: {$0.id == task.id})
         if let foundIndex = index {

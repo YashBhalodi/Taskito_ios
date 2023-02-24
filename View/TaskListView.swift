@@ -27,14 +27,23 @@ struct TaskListView: View {
                             })
                         }))
                 }
+                .onDelete(perform: { indexSet in
+                    vm.taskList.removeTask(indexSet: indexSet)
+                })
             }
             .listStyle(PlainListStyle())
             .navigationTitle(vm.taskList.title)
-            .navigationBarItems(trailing: NavigationLink(
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: NavigationLink(
                                     destination: AddTaskView(listVM: vm),
                                     label: {
-                                        Text("Add")
-                                    }))
+                                        Image(systemName: "plus.app.fill")
+                                            .resizable()
+                                            .frame(width: 24, height: 24, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    }
+                )
+            )
         }
         
     }
