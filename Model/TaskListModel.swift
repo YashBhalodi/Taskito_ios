@@ -71,4 +71,8 @@ struct TaskListModel: Identifiable {
             }
         }
     }
+    
+    mutating func moveTask(_ indices:IndexSet,_ newOffset:Int ) {
+        tasks.move(fromOffsets: indices, toOffset: newOffset)
+    }
 }

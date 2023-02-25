@@ -39,10 +39,13 @@ struct TaskView: View {
     var body: some View {
         HStack {
             Text(task.title)
-                .font(.title3)
+                .font(.headline)
                 .fontWeight(.semibold)
                 .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                 .lineLimit(2)
+                .foregroundColor(.accentColor)
+                .lineSpacing(8)
+                .padding(.trailing, 2)
             Spacer()
             StatusChip(status: task.status)
         }

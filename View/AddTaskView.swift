@@ -24,12 +24,14 @@ struct AddTaskView: View {
                 .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
                 .font(.title2.weight(.semibold))
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(.bottom, 12)
+            
+            Spacer()
             
             Button("Add to \"\(listVM.taskList.title)\"", action: {
                 listVM.taskList.addTask(TaskModel(title: titleInput, status: TaskStatus.todo))
                 presentationMode.wrappedValue.dismiss()
             })
+            .frame(maxWidth: .infinity)
             .font(.headline)
             .padding()
             .background(LinearGradient(
@@ -39,8 +41,11 @@ struct AddTaskView: View {
             ))
             .foregroundColor(.white)
             .cornerRadius(12)
+            
+            
         }
         .padding()
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
