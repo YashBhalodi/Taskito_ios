@@ -15,14 +15,14 @@ struct AddTaskView: View {
     var body: some View {
         VStack(spacing:20) {
             Text("What do you want to accomplish?")
-                .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
+                .foregroundColor(.accentColor)
                 .font(.title)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             TextField("Learn go ...", text: $titleInput)
-                .foregroundColor(Color(#colorLiteral(red: 0.1411764771, green: 0.3960784376, blue: 0.5647059083, alpha: 1)))
-                .font(.title2.weight(.semibold))
+                .foregroundColor(.accentColor)
+                .font(.title3.weight(.semibold))
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             
             Spacer()
