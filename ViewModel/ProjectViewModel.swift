@@ -7,28 +7,32 @@
 
 import SwiftUI
 
-class TaskListViewModel: ObservableObject {
-    @Published var taskList: TaskListModel = TaskListModel(title: "My work")
+class ProjectViewModel: ObservableObject {
+    @Published var project: ProjectModel = ProjectModel(title: "My work")
     
     func getTasksOfStatus(status: TaskStatus) -> [TaskModel] {
-        return self.taskList.tasks.filter { task in
+        return self.project.tasks.filter { task in
             return task.status == status
         }
     }
     
     func removeTask(indexSet: IndexSet) {
-        self.taskList.removeTask(indexSet: indexSet)
+        self.project.removeTask(indexSet: indexSet)
     }
     
     func removeTask(_ task: TaskModel) {
-        self.taskList.removeTask(task)
+        self.project.removeTask(task)
     }
     
     func moveTask(_ indices: IndexSet,_ newOffSet: Int) {
-        self.taskList.moveTask(indices, newOffSet)
+        self.project.moveTask(indices, newOffSet)
     }
     
     func transitionTaskToNextStatus(_ task: TaskModel) {
-        self.taskList.transitionTaskToNextStatus(task: task)
+        self.project.transitionTaskToNextStatus(task: task)
+    }
+    
+    func addTask(_ task: TaskModel) {
+        self.project.addTask(task)
     }
 }

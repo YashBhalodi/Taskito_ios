@@ -7,12 +7,7 @@
 
 import Foundation
 
-var nextStatusDict: [TaskStatus:TaskStatus] = [
-    TaskStatus.todo:TaskStatus.inProgress,
-    TaskStatus.inProgress:TaskStatus.completed,
-]
-
-struct TaskListModel: Identifiable {
+struct ProjectModel: Identifiable {
     let id: String
     var title: String
     var tasks: [TaskModel] = [] {

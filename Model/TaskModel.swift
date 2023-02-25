@@ -7,25 +7,6 @@
 
 import Foundation
 
-enum TaskStatus: String, Codable, CaseIterable {
-    case todo = "To do"
-    case inProgress = "In Progress"
-    case completed = "Completed"
-    
-    func isNextStatusAvailable(_ status: TaskStatus) {
-        
-    }
-}
-
-struct TaskStatusModel {
-    static func nextStatusAvailable(_ status: TaskStatus) -> Bool {
-        if nextStatusDict[status] != nil {
-            return true
-        }
-        return false
-    }
-}
-
 struct TaskModel: Identifiable, Codable {
     var id: String
     var title: String

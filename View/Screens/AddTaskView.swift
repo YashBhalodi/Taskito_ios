@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddTaskView: View {
     @Environment (\.presentationMode) var presentationMode
-    var listVM: TaskListViewModel
+    var projectVM: ProjectViewModel
     @State var titleInput : String = ""
     
     var body: some View {
@@ -27,18 +27,20 @@ struct AddTaskView: View {
             
             Spacer()
             
-            Button("Add to \"\(listVM.taskList.title)\"", action: {
-                listVM.taskList.addTask(TaskModel(title: titleInput, status: TaskStatus.todo))
+            Button("Add to \"\(projectVM.project.title)\"", action: {
+                projectVM.addTask(TaskModel(title: titleInput, status: TaskStatus.todo))
                 presentationMode.wrappedValue.dismiss()
             })
             .frame(maxWidth: .infinity)
             .font(.headline)
             .padding()
-            .background(LinearGradient(
-                            gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.6628800035, blue: 0.8386012912, alpha: 1))]),
-                            startPoint: .bottomTrailing,
-                            endPoint: .center
-            ))
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)), Color(#colorLiteral(red: 0, green: 0.6628800035, blue: 0.8386012912, alpha: 1))]),
+                    startPoint: .bottomTrailing,
+                    endPoint: .center
+                )
+            )
             .foregroundColor(.white)
             .cornerRadius(12)
             
@@ -51,6 +53,6 @@ struct AddTaskView: View {
 
 struct AddTask_Previews: PreviewProvider {
     static var previews: some View {
-        AddTaskView(listVM: TaskListViewModel())
+        AddTaskView(projectVM: ProjectViewModel())
     }
 }

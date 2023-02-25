@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-var bgColorDict : [TaskStatus:Color] = [
-    TaskStatus.todo : Color.gray,
-    TaskStatus.inProgress: Color.purple,
-    TaskStatus.completed: Color.green,
-]
-
-var foregroundColorDict : [TaskStatus:Color] = [
-    TaskStatus.todo : Color.gray,
-    TaskStatus.inProgress: Color.purple,
-    TaskStatus.completed: Color.green,
-]
-
 struct StatusChip: View {
     var status: TaskStatus
     
@@ -33,7 +21,7 @@ struct StatusChip: View {
     }
 }
 
-struct TaskView: View {
+struct TaskItemView: View {
     var task: TaskModel
     var hideStatusChip: Bool = true
     
@@ -59,14 +47,13 @@ struct TaskView: View {
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-        
-            TaskView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.todo))
+            TaskItemView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.todo))
                 .previewLayout(.sizeThatFits)
-            TaskView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.inProgress))
+            TaskItemView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.inProgress))
                 .previewLayout(.sizeThatFits)
-            TaskView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.completed))
+            TaskItemView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.completed))
                 .previewLayout(.sizeThatFits)
-            TaskView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.completed), hideStatusChip: true)
+            TaskItemView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.completed), hideStatusChip: true)
                 .previewLayout(.sizeThatFits)
         }
     }
