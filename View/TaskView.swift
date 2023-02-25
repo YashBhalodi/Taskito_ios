@@ -35,6 +35,7 @@ struct StatusChip: View {
 
 struct TaskView: View {
     var task: TaskModel
+    var hideStatusChip: Bool = true
     
     var body: some View {
         HStack {
@@ -47,7 +48,10 @@ struct TaskView: View {
                 .lineSpacing(8)
                 .padding(.trailing, 2)
             Spacer()
-            StatusChip(status: task.status)
+            
+            if !hideStatusChip {
+                StatusChip(status: task.status)
+            }
         }
     }
 }
@@ -61,6 +65,8 @@ struct TaskView_Previews: PreviewProvider {
             TaskView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.inProgress))
                 .previewLayout(.sizeThatFits)
             TaskView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.completed))
+                .previewLayout(.sizeThatFits)
+            TaskView(task: TaskModel(title: "Task 1basdasdua da sdasidasidasd ad aasdbasiodba sdao da sdaod osd as diusadsa djas  ", status: TaskStatus.completed), hideStatusChip: true)
                 .previewLayout(.sizeThatFits)
         }
     }

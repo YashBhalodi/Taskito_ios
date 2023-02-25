@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB4C50D829A0F9430043661A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50D729A0F9430043661A /* HomeScreen.swift */; };
-		DB4C50DE29A11E2D0043661A /* CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */; };
+		DB4C50DE29A11E2D0043661A /* PlaceholderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4C50DD29A11E2D0043661A /* PlaceholderModifier.swift */; };
 		DB808EA729A271BE00A7E299 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EA629A271BE00A7E299 /* TaskModel.swift */; };
 		DB808EAA29A2759E00A7E299 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EA929A2759E00A7E299 /* TaskView.swift */; };
 		DB808EAC29A2776000A7E299 /* TaskListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB808EAB29A2776000A7E299 /* TaskListModel.swift */; };
@@ -17,11 +17,13 @@
 		DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB937C39298E7F1000796B35 /* TaskitoApp.swift */; };
 		DB937C3E298E7F1100796B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB937C3D298E7F1100796B35 /* Assets.xcassets */; };
 		DB96EC6D29A5CD09004442C6 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB96EC6C29A5CD09004442C6 /* AddTaskView.swift */; };
+		DBA8C1C629A9DE3C00722DA6 /* NavigationBarTitleTextColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8C1C529A9DE3C00722DA6 /* NavigationBarTitleTextColorModifier.swift */; };
+		DBA8C1C829A9DE6100722DA6 /* BlinkingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA8C1C729A9DE6100722DA6 /* BlinkingModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB4C50D729A0F9430043661A /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
-		DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExtensions.swift; sourceTree = "<group>"; };
+		DB4C50DD29A11E2D0043661A /* PlaceholderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderModifier.swift; sourceTree = "<group>"; };
 		DB808EA629A271BE00A7E299 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		DB808EA929A2759E00A7E299 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
 		DB808EAB29A2776000A7E299 /* TaskListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListModel.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		DB937C3D298E7F1100796B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB937C42298E7F1200796B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB96EC6C29A5CD09004442C6 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		DBA8C1C529A9DE3C00722DA6 /* NavigationBarTitleTextColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleTextColorModifier.swift; sourceTree = "<group>"; };
+		DBA8C1C729A9DE6100722DA6 /* BlinkingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkingModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +80,9 @@
 		DB808EA829A274F600A7E299 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DB4C50DD29A11E2D0043661A /* CustomExtensions.swift */,
+				DB4C50DD29A11E2D0043661A /* PlaceholderModifier.swift */,
+				DBA8C1C529A9DE3C00722DA6 /* NavigationBarTitleTextColorModifier.swift */,
+				DBA8C1C729A9DE6100722DA6 /* BlinkingModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,9 +180,11 @@
 				DB808EB129A27CD300A7E299 /* TaskListView.swift in Sources */,
 				DB808EAC29A2776000A7E299 /* TaskListModel.swift in Sources */,
 				DB96EC6D29A5CD09004442C6 /* AddTaskView.swift in Sources */,
+				DBA8C1C829A9DE6100722DA6 /* BlinkingModifier.swift in Sources */,
 				DB4C50D829A0F9430043661A /* HomeScreen.swift in Sources */,
-				DB4C50DE29A11E2D0043661A /* CustomExtensions.swift in Sources */,
+				DB4C50DE29A11E2D0043661A /* PlaceholderModifier.swift in Sources */,
 				DB937C3A298E7F1000796B35 /* TaskitoApp.swift in Sources */,
+				DBA8C1C629A9DE3C00722DA6 /* NavigationBarTitleTextColorModifier.swift in Sources */,
 				DB808EB329A27D2F00A7E299 /* TaskListViewModel.swift in Sources */,
 				DB808EAA29A2759E00A7E299 /* TaskView.swift in Sources */,
 				DB808EA729A271BE00A7E299 /* TaskModel.swift in Sources */,

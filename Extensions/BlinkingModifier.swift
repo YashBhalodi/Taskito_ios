@@ -1,10 +1,11 @@
 //
-//  CustomExtensions.swift
+//  BlinkingView.swift
 //  Taskito
 //
-//  Created by Yash Bhalodi on 18/02/23.
+//  Created by Yash Bhalodi on 25/02/23.
 //
 
+import Foundation
 import SwiftUI
 
 struct BlinkViewModifier: ViewModifier {
@@ -27,18 +28,5 @@ struct BlinkViewModifier: ViewModifier {
 extension View {
     func blinking(duration: Double = 0.75) -> some View {
         modifier(BlinkViewModifier(duration: duration))
-    }
-}
-
-extension View {
-    func placeholder<Content: View>(
-        when shouldShow: Bool,
-        alignment: Alignment = .leading,
-        @ViewBuilder placeholder: () -> Content) -> some View {
-
-        ZStack(alignment: alignment) {
-            placeholder().opacity(shouldShow ? 1 : 0)
-            self
-        }
     }
 }

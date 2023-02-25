@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TaskStatus: String, Codable {
+enum TaskStatus: String, Codable, CaseIterable {
     case todo = "To do"
     case inProgress = "In Progress"
     case completed = "Completed"
