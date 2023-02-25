@@ -9,10 +9,10 @@ import SwiftUI
 
 struct StatusTabPicker: View {
     @Binding var selectedStatus: TaskStatus
-    var allTasks: [TaskModel] = []
+    var vm: TaskListViewModel
     
     var body: some View {
-        Picker(selection: $selectedStatus, label: Text("Picker"), content: {
+        Picker(selection: $selectedStatus, label: Text("Status Filter"), content: {
             ForEach(TaskStatus.allCases, id: \.rawValue) { status in
                     Text("\(status.rawValue) (\(getCount(status: status)))").tag(status)
             }
@@ -21,9 +21,7 @@ struct StatusTabPicker: View {
     }
     
     func getCount(status: TaskStatus) -> Int {
-        return self.allTasks.filter { task in
-            return task.status == status
-        }.count
+        return self.vm.getStatusWiseTask(status: status).count
     }
 }
 
@@ -49,33 +47,27 @@ struct TaskListView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: nil) {
-                StatusTabPicker(selectedStatus: $selectedStatus, allTasks: vm.taskList.tasks)
+                StatusTabPicker(selectedStatus: $selectedStatus, vm: vm)
                     .padding(.horizontal)
                 
                 List {
-                    ForEach(vm.taskList.tasks.filter({ task in
-                        return task.status == selectedStatus
-                    })) { task in
+                    ForEach(vm.getStatusWiseTask(status: selectedStatus)) { task in
                         TaskView(task: task)
                             .contextMenu(ContextMenu(menuItems: {
                                 Button(action: {
-                                    vm.taskList.transitionTaskToNextStatus(task: task)
+                                    vm.transitionTaskToNextStatus(task)
                                 }, label: {
                                     Text("Next status")
                                 })
                                 Button(action: {
-                                vm.taskList.removeTask(task)
+                                    vm.removeTask(task)
                                 }, label: {
                                     Text("Delete")
                                 })
                             }))
                     }
-                    .onDelete(perform: { indexSet in
-                        vm.taskList.removeTask(indexSet: indexSet)
-                    })
-                    .onMove(perform: { indices, newOffset in
-                        vm.taskList.moveTask(indices, newOffset)
-                    })
+                    .onDelete(perform: vm.removeTask)
+                    .onMove(perform: vm.moveTask)
                 }
                 .listStyle(PlainListStyle())
                 .navigationTitle(vm.taskList.title)
