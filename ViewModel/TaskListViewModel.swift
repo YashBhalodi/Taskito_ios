@@ -10,7 +10,7 @@ import SwiftUI
 class TaskListViewModel: ObservableObject {
     @Published var taskList: TaskListModel = TaskListModel(title: "My work")
     
-    func getStatusWiseTask(status: TaskStatus) -> [TaskModel] {
+    func getTasksOfStatus(status: TaskStatus) -> [TaskModel] {
         return self.taskList.tasks.filter { task in
             return task.status == status
         }

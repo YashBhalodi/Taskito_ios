@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct StatusTabPicker: View {
-    @Binding var selectedStatus: TaskStatus
+    @Binding var selectedStatus: TaskStatus {
+        didSet {
+            print(oldValue, selectedStatus)
+        }
+    }
     var vm: TaskListViewModel
     
     var body: some View {
@@ -21,7 +25,7 @@ struct StatusTabPicker: View {
     }
     
     func getCount(status: TaskStatus) -> Int {
-        return self.vm.getStatusWiseTask(status: status).count
+        return self.vm.getTasksOfStatus(status: status).count
     }
 }
 
@@ -34,9 +38,6 @@ struct StatusTabPicker: View {
 /// 2 - app icon
 /// 3 - app splash screen
 /// 4 - customize status picker
-
-// TODO - Code maintainance
-/// 1 - move logic to Model or ViewModel
 
 
 
@@ -51,7 +52,7 @@ struct TaskListView: View {
                     .padding(.horizontal)
                 
                 List {
-                    ForEach(vm.getStatusWiseTask(status: selectedStatus)) { task in
+                    ForEach(vm.getTasksOfStatus(status: selectedStatus)) { task in
                         TaskView(task: task)
                             .contextMenu(ContextMenu(menuItems: {
                                 Button(action: {
