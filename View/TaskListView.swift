@@ -7,31 +7,8 @@
 
 import SwiftUI
 
-struct StatusTabPicker: View {
-    @Binding var selectedStatus: TaskStatus {
-        didSet {
-            print(oldValue, selectedStatus)
-        }
-    }
-    var vm: TaskListViewModel
-    
-    var body: some View {
-        Picker(selection: $selectedStatus, label: Text("Status Filter"), content: {
-            ForEach(TaskStatus.allCases, id: \.rawValue) { status in
-                    Text("\(status.rawValue) (\(getCount(status: status)))").tag(status)
-            }
-        })
-        .pickerStyle(SegmentedPickerStyle())
-    }
-    
-    func getCount(status: TaskStatus) -> Int {
-        return self.vm.getTasksOfStatus(status: status).count
-    }
-}
-
 // TODO - Bug fix
 /// 1 - List disappears for a fraction when we trasition a task to next status
-/// 2 - List edit mode move and delete action
 
 // TODO - Feat
 /// 1 - empty state view - overall and status wise
@@ -48,8 +25,13 @@ struct TaskListView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: nil) {
-                StatusTabPicker(selectedStatus: $selectedStatus, vm: vm)
-                    .padding(.horizontal)
+                Picker(selection: $selectedStatus, label: Text("Status Filter"), content: {
+                    ForEach(TaskStatus.allCases, id: \.rawValue) { status in
+                        Text("\(status.rawValue) (\(vm.getTasksOfStatus(status: status).count))").tag(status)
+                    }
+                })
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
                 
                 List {
                     ForEach(vm.getTasksOfStatus(status: selectedStatus)) { task in
