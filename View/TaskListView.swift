@@ -37,11 +37,15 @@ struct TaskListView: View {
                     ForEach(vm.getTasksOfStatus(status: selectedStatus)) { task in
                         TaskView(task: task)
                             .contextMenu(ContextMenu(menuItems: {
-                                Button(action: {
-                                    vm.transitionTaskToNextStatus(task)
-                                }, label: {
-                                    Text("Next status")
-                                })
+                                
+                                if (TaskStatusModel.nextStatusAvailable(selectedStatus)) {
+                                    Button(action: {
+                                        vm.transitionTaskToNextStatus(task)
+                                    }, label: {
+                                        Text("Next status")
+                                    })
+                                }
+                                
                                 Button(action: {
                                     vm.removeTask(task)
                                 }, label: {
