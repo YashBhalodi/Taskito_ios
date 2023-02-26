@@ -34,11 +34,5 @@ class ProjectViewModel: ObservableObject {
     
     func addTask(_ task: TaskModel) {
         self.project.addTask(task)
-        self.project.addTask(task)
-        self.project.addTask(task)
-        self.project.addTask(task)
-        self.project.addTask(task)
-        self.project.addTask(task)
-        self.project.addTask(task)
     }
 }
