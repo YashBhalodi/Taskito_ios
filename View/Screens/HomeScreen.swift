@@ -9,7 +9,10 @@ import SwiftUI
 
 struct HomeScreen: View {
     var body: some View {
-        ProjectView()
+        NavigationView {
+            ProjectView()
+                .navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 

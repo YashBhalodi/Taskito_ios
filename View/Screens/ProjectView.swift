@@ -28,7 +28,6 @@ struct ProjectView: View {
     @State var selectedTaskId: String?
     
     var body: some View {
-        NavigationView {
             VStack(spacing: nil) {
                 Picker(selection: $selectedStatus, label: Text("Status Filter"), content: {
                     ForEach(TaskStatus.allCases, id: \.rawValue) { status in
@@ -48,9 +47,16 @@ struct ProjectView: View {
                                 .contextMenu(ContextMenu(menuItems: {
                                     if (TaskStatusModel.nextStatusAvailable(selectedStatus)) {
                                         Button(action: {
-                                            vm.transitionTaskToNextStatus(task)
+                                            withAnimation {
+                                                vm.transitionTaskToNextStatus(task)
+                                            }
                                         }, label: {
-                                            Text("Next status")
+                                            if let nextStatus = TaskStatusModel.getNextStatus(selectedStatus) {
+                                                Text(nextStatus.rawValue)
+                                            } else {
+                                                Text("Next status")
+                                            }
+                                
                                         })
                                     }
                                     Button(action: {
@@ -83,8 +89,6 @@ struct ProjectView: View {
                 )
             }
         }
-        
-    }
 }
 
 struct ProjectView_Previews: PreviewProvider {

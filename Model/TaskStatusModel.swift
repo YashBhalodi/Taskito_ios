@@ -35,4 +35,7 @@ struct TaskStatusModel {
     static func nextStatusAvailable(_ status: TaskStatus) -> Bool {
         return nextStatusDict[status] != nil
     }
+    static func getNextStatus(_ status: TaskStatus) -> TaskStatus? {
+        return nextStatusDict[status] ?? nil
+    }
 }
